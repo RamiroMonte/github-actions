@@ -24,6 +24,7 @@ jobs:
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
       - run: npm run build -- --props="./input-props.json"
+      - run: console.log(${{ toJson(github.event.inputs) }})
       - uses: actions/upload-artifact@v2
         with:
           name: out.mp4
