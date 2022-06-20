@@ -1,51 +1,29 @@
 import {Composition} from 'remotion';
-import {HelloWorld} from './HelloWorld';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
-import {Title} from './HelloWorld/Title';
+import {Gradient} from './Gradient';
+import {Scene3} from './Scene3';
 
 export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="HelloWorld"
-				component={HelloWorld}
-				durationInFrames={150}
+				id="Gradient"
+				component={Gradient}
+				width={720}
+				height={1280}
+				durationInFrames={30 * 4}
 				fps={30}
-				width={1920}
-				height={1080}
+			/>
+			<Composition
+				id="Scene3"
+				component={Scene3}
+				width={720}
+				height={1280}
+				durationInFrames={30 * 5}
+				fps={30}
 				defaultProps={{
-					titleText: 'Welcome to Remotion',
-					titleColor: 'black',
+					topSongName: 'All I Talk Is Money',
+					topSongArtistName: 'Albusta',
 				}}
-			/>
-			<Composition
-				id="Logo"
-				component={Logo}
-				durationInFrames={200}
-				fps={30}
-				width={1920}
-				height={1080}
-			/>
-			<Composition
-				id="Title"
-				component={Title}
-				durationInFrames={100}
-				fps={30}
-				width={1920}
-				height={1080}
-				defaultProps={{
-					titleText: 'Welcome to Remotion',
-					titleColor: 'black',
-				}}
-			/>
-			<Composition
-				id="Subtitle"
-				component={Subtitle}
-				durationInFrames={100}
-				fps={30}
-				width={1920}
-				height={1080}
 			/>
 		</>
 	);
